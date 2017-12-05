@@ -1,42 +1,23 @@
-.btn-flat {
-  color: $secondary-color;
-  &.btn:hover {
-    color: #fff;
-  }
-}
-
 .btn {
   &:not(.btn-floating) {
     box-shadow: none;
   }
-  &-danger {
-    color: $error-color;
+  &-flat {
+    @extend .btn;
+    color: $secondary-color;
     &:hover {
-      background: $error-color;
-      color: #fff;
+      background: transparentize(#cccccc, .6);
+    }
+    &:focus, &:active {
+      background: transparentize(#000000, .88);
     }
   }
-  &-action {
-    &-primary {
-      @extend  .btn;
-      @extend .btn-flat;
+  &-fab, &-floating {
+    svg {
+      vertical-align: middle;
     }
-    &-secondary {
-      @extend .btn;
-      @extend .btn-flat;
+    &.btn-fab-hidden {
+      transform: scaleX(0) scaleY(0);
     }
   }
-}
-
-.btn-fab, .btn-floating {
-  svg {
-    vertical-align: middle;
-  }
-  &.btn-fab-hidden {
-    transform: scaleX(0) scaleY(0);
-  }
-}
-
-.bulk-submit {
-  margin-top: 25px;
 }
