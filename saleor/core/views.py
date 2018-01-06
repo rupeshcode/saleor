@@ -1,10 +1,7 @@
-from __future__ import unicode_literals
-
 from django.template.response import TemplateResponse
 from django.contrib import messages
-from django.conf import settings
 from django.utils.translation import pgettext_lazy
-from impersonate.views import impersonate as orig_impersonate
+from impersonate.views import impersonate as orig_impersonate, stop_impersonate
 
 from ..dashboard.views import staff_member_required
 from ..product.utils import products_with_availability, products_for_homepage

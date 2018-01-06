@@ -1,6 +1,4 @@
 """Checkout-related forms."""
-from __future__ import unicode_literals
-
 from django import forms
 from django.utils.safestring import mark_safe
 from django.utils.translation import pgettext_lazy
@@ -29,7 +27,7 @@ class ShippingAddressesForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         additional_addresses = kwargs.pop('additional_addresses', [])
-        super(ShippingAddressesForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         address_field = self.fields['address']
         address_choices = [
             (address.id, str(address)) for address in additional_addresses]
@@ -86,14 +84,16 @@ class ShippingMethodForm(forms.Form):
         required=True)
 
     def __init__(self, country_code, *args, **kwargs):
-        super(ShippingMethodForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         method_field = self.fields['method']
         if country_code:
             queryset = method_field.queryset
             method_field.queryset = queryset.unique_for_country_code(
                 country_code)
+
         if self.initial.get('method') is None:
-            method_field.initial = method_field.queryset.first()
+            self.initial['method'] = method_field.queryset.first()
+
         method_field.empty_label = None
 
 
