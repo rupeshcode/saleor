@@ -24,7 +24,7 @@ ROOT_URLCONF = 'saleor.urls'
 WSGI_APPLICATION = 'saleor.wsgi.application'
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('rupesh', 'rupesh171198@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -39,7 +39,7 @@ if os.environ.get('REDIS_URL'):
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
+        default='postgres://rupesh:@localhost:5432/sale',
         conn_max_age=600)}
 
 
@@ -123,7 +123,8 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '2@4@)&@g(8k@o(-t&k8hq%j*evjysu0ul13jw6af(g=8z!-xon'
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -298,7 +299,8 @@ BOOTSTRAP3 = {
 
 TEST_RUNNER = ''
 
-ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost'))
+ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
