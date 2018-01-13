@@ -58,14 +58,26 @@ if not EMAIL_URL and SENDGRID_USERNAME and SENDGRID_PASSWORD:
         SENDGRID_USERNAME, SENDGRID_PASSWORD)
 email_config = dj_email_url.parse(EMAIL_URL or 'console://')
 
-EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
-EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
-EMAIL_HOST = email_config['EMAIL_HOST']
-EMAIL_PORT = email_config['EMAIL_PORT']
-EMAIL_BACKEND = email_config['EMAIL_BACKEND']
-EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
-EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+#EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
+#EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+#EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+#EMAIL_HOST = email_config['EMAIL_HOST']
+#EMAIL_PORT = email_config['EMAIL_PORT']
+#EMAIL_BACKEND = email_config['EMAIL_BACKEND']
+#EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
+#EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+
+#EMAIL_HOST = 'smtp.sendgrid.net'
+#EMAIL_HOST_USER = 'dreamhouse'
+#EMAIL_HOST_PASSWORD = 'dream12690'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testdreamhouse@gmail.com'
+EMAIL_HOST_PASSWORD = 'dream12690'
+EMAIL_PORT = 587
 
 ENABLE_SSL = ast.literal_eval(
     os.environ.get('ENABLE_SSL', 'False'))
@@ -301,7 +313,7 @@ bootstrap4 = {
 
 TEST_RUNNER = ''
 
-ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118']
+ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118', 'dreamhousecrafts.herokuapp.com']
 #ALLOWED_HOSTS = ['127.0.0.1']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

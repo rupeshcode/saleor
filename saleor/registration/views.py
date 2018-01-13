@@ -10,7 +10,8 @@ from django.utils.translation import ugettext_lazy as _
 from saleor.cart.utils import find_and_assign_anonymous_cart
 
 from .forms import LoginForm, PasswordSetUpForm, SignupForm
-
+from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 @find_and_assign_anonymous_cart()
 def login(request):
@@ -32,6 +33,13 @@ def signup(request):
         form.save()
         password = form.cleaned_data.get('password')
         email = form.cleaned_data.get('email')
+        to_email = 'rupesh171198@gmail.com'
+        email = EmailMessage(
+            'test subject', 'test mail', to=[to_email]
+        )
+        email.send()
+        #send_mail('Subject here', 'Here is the message.', 'testdreahouse@gmail.com', ['rupesh171198@gmail.com'], fail_silently=False)
+
         user = auth.authenticate(
             request=request, email=email, password=password)
         if user:
