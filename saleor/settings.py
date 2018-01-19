@@ -82,6 +82,9 @@ EMAIL_PORT = 587
 ENABLE_SSL = ast.literal_eval(
     os.environ.get('ENABLE_SSL', 'False'))
 
+ENABLE_SSL = ast.literal_eval(
+    os.environ.get('ENABLE_SSL', 'False'))
+
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 ORDER_FROM_EMAIL = os.getenv('ORDER_FROM_EMAIL', DEFAULT_FROM_EMAIL)
 
@@ -313,7 +316,11 @@ bootstrap4 = {
 
 TEST_RUNNER = ''
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118', 'nameless-ridge-43312.herokuapp.com','sheltered-lowlands-30082.herokuapp.com' ]
+=======
+ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118']
+>>>>>>> bca2e6f1e1eb786a14f49417757fd8ac17254368
 #ALLOWED_HOSTS = ['127.0.0.1']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

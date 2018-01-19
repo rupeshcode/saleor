@@ -33,6 +33,7 @@ def signup(request):
         form.save()
         password = form.cleaned_data.get('password')
         email = form.cleaned_data.get('email')
+<<<<<<< HEAD
         to_email = 'rupesh171198@gmail.com'
         email = EmailMessage(
             'test subject', 'test mail', to=[to_email]
@@ -40,6 +41,8 @@ def signup(request):
         email.send()
         #send_mail('Subject here', 'Here is the message.', 'testdreahouse@gmail.com', ['rupesh171198@gmail.com'], fail_silently=False)
 
+=======
+>>>>>>> bca2e6f1e1eb786a14f49417757fd8ac17254368
         user = auth.authenticate(
             request=request, email=email, password=password)
         if user:
