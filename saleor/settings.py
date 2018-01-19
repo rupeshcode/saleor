@@ -313,7 +313,7 @@ bootstrap4 = {
 
 TEST_RUNNER = ''
 
-ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118', 'dreamhousecrafts.herokuapp.com']
+ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost')) + ['127.0.0.1', '192.168.1.118', 'nameless-ridge-43312.herokuapp.com','sheltered-lowlands-30082.herokuapp.com' ]
 #ALLOWED_HOSTS = ['127.0.0.1']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
